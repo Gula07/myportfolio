@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<script src="JS/localStorage.js"></script>
+
+<body>
+  <aside class="sidebar">
+    <marquee>
+    <h2>Thiago Sanó</h2>
+  </marquee>
+    <img src="KK.jpg" width="120px" class="yo" height="120px" alt="fotokk">
+    <marquee>
+    <p>Estudiante de Informatica</p>
+  </marquee>
+    <p>Email: monotematico92@gmail.com</p>
+    <a href="https://www.instagram.com/sathia07_?igsh=cXkzbndmOWpzOXY5">
+    <img src="igicon.png" class="ig" alt="IG">
+     <h2>Visitas:</h2>
+    <p id="contador"></p>
+  </aside>
+
+  <div class="main-content">
+    <nav class="navbar">
+      <div>Mi Portfolio</div>
+      <div>
+        <a href="#sobremi">Sobre mí</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="habilidades.html">Habilidades</a>
+        <a href="series.html">Series</a>
+        <a href="contacto.html">Contacto</a>
+         <button id="toggle-theme" class="theme-toggle">
+        <span id="icon">🌞</span>
+      </div>
+    </nav>
+
+    <div class="content">
+      <section class="section" id="series">
+        <h2>Series y Peliculas</h2>
+        <p>En esta pestaña vas a encontrar las series y peliculas que son interesantes al menos para mi.</p>
+      </section>
+    
+      <section class="section" id="series">
+  <h2>Series favoritas y peliculas</h2>
+  <div class="card-container">
+    <div class="serie-card">
+      <img src="trollhunters.png" alt="Trollhunters">
+      <div class="card-text">
+        <h3>TrollHunters</h3>
+        <p>Un chico de quince años llamado Jim Lakes encuentra un amuleto mágico que lo transforma en un guerrero con el título del Cazatroles, cazador de troles. De ese modo será el elegido para defender a los troles que viven en el mundo subterráneo de la ciudad de Arcadia, Mercadotrol, y luchar contra los gumgumns, los troles que comen carne humana y que intentan escapar de las llamadas "Tierras Oscuras" para acabar con la paz y conquistar el mundo humano.</p>
+      </div>
+    </div>
+
+    <div class="serie-card">
+      <img src="bighero6.jpg" alt="BigHero6">
+      <div class="card-text">
+        <h3>6 Grandes Heroes</h3>
+        <p>Hiro Hamada es un adolescente curioso al que le encanta la robótica. Acaba de perder a su hermano Tadashi cuando éste estaba a punto de destapar una peligrosa red criminal encabezada por el misterioso Yokai, un villano enmascarado. Para llenar su pérdida se apoya en Baymax, un enorme robot bonachón creado por su añorado hermano, que pronto se convierte en su mejor amigo. Juntos, reúnen a los amigos de Tadashi y, convertidos en auténticos superhérores, forman un equipo para intentar derrotar a los delincuentes y acabar con el peligroso villano que sueña con destruir la tecnológica ciudad de San Fransokyo.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <script>
+      // Obtengo el valor actual del contador
+      let visitas = localStorage.getItem("contadorVisitas");
+
+      // Si no existe todavía, lo inicializo en 0
+      if (visitas === null) {
+        visitas = 0;
+      }
+
+      // Lo convierto a número y sumo 1
+      visitas = parseInt(visitas) + 1;
+
+      // Guardo el nuevo valor en LocalStorage
+      localStorage.setItem("contadorVisitas", visitas);
+
+      // Muestro el contador en el HTML
+      document.getElementById("contador").textContent = visitas;
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<script src="JS/localStorage.js"></script>
+
+<body>
+  <aside class="sidebar">
+    <marquee>
+    <h2>Thiago Sanó</h2>
+  </marquee>
+    <img src="KK.jpg" width="120px" class="yo" height="120px" alt="fotokk">
+    <marquee>
+    <p>Estudiante de Informatica</p>
+  </marquee>
+    <p>Email: monotematico92@gmail.com</p>
+    <a href="https://www.instagram.com/sathia07_?igsh=cXkzbndmOWpzOXY5">
+    <img src="igicon.png" class="ig" alt="IG">
+    <h2>Visitas:</h2>
+    <p id="contador"></p>
+    </aside>
+
+  <div class="main-content">
+    <nav class="navbar">
+      <div>Mi Portfolio</div>
+      <div>
+        <a href="#sobremi">Sobre mí</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="habilidades.html">Habilidades</a>
+        <a href="series.html">Series</a>
+        <a href="contacto.html">Contacto</a>
+        <button id="toggle-theme" class="theme-toggle">
+        <span id="icon">🌞</span>
+      </button>
+      </div>
+    </nav>
+
+      <div class="content">
+      <section class="section" id="sobremi">
+        <h2>Sobre mí</h2>
+        <p>Soy Thiago Sanó, tengo 18 años, soy un apasionado por la informatica y un poco bastante por el futbol. Actualmente estoy 6to año de Secundaria de la EEST Nº6 Chacabuco, en Morón. Mis clubes favoritos son Boca Juniors y el Aston Villa de Inglaterra. Me encanta jugar al futbol aunque no sea epetacular jugando.
+        </p>
+      </section>
+  <script>
+      // Obtengo el valor actual del contador
+      let visitas = localStorage.getItem("contadorVisitas");
+
+      // Si no existe todavía, lo inicializo en 0
+      if (visitas === null) {
+        visitas = 0;
+      }
+
+      // Lo convierto a número y sumo 1
+      visitas = parseInt(visitas) + 1;
+
+      // Guardo el nuevo valor en LocalStorage
+      localStorage.setItem("contadorVisitas", visitas);
+
+      // Muestro el contador en el HTML
+      document.getElementById("contador").textContent = visitas;
+  </script>
+
+</body>
+</html>
